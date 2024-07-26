@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TruYum - Home</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to TruYum</h1>
+        <nav>
+            <ul>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/orders">Orders</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Our Delicious Menu</h2>
+        <div th:each="item : ${menuItems}">
+            <h3 th:text="${item.name}">Item Name</h3>
+            <p th:text="${item.description}">Item Description</p>
+            <p th:text="'Price: ' + ${item.price}">Item Price</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 TruYum. All rights reserved.</p>
+    </footer>
+</body>
+</html>
